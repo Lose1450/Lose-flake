@@ -7,7 +7,7 @@
 {
   imports =
     [ # Include the results of the hardware scan.
-      etc/nixos/hardware-configuration.nix
+      ./hardware-configuration.nix
     ];
 
   # Bootloader.
@@ -94,6 +94,9 @@
   # Install firefox.
   programs.firefox.enable = true;
 
+  #installs flatpak
+  services.flatpak.enable = true;
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
@@ -112,6 +115,8 @@
     osu-lazer-bin
     modrinth-app
     protonplus
+    obs-studio
+    flatpak
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
