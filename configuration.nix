@@ -3,12 +3,24 @@
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
 { config, pkgs, ... }:
+let
+  home-manager = builtins.fetchTarball {
+  url = "https://github.com/nix-community/home-manager/archive/release-26.05.tar.gz";
+  sha256 = "1qsx6l8z2v2rzr47chfqvmr9585lcrb2wihixbklmz63nhsba6sb";
+  };
+in
 
 {
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      (import "${home-manager}/nixos")
     ];
+
+  home-manager.useUserPackages = true;
+  home-manager.useGlobalPkgs = true;
+  home-manager.backupFileExtension = "backup";
+  home-manager.users.lose = import ./home.nix;
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
