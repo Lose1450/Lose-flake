@@ -3,24 +3,13 @@
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
 { config, pkgs, ... }:
-let
-  home-manager = builtins.fetchTarball {
-  url = "https://github.com/nix-community/home-manager/archive/release-26.05.tar.gz";
-  sha256 = "1qsx6l8z2v2rzr47chfqvmr9585lcrb2wihixbklmz63nhsba6sb";
-  };
-in
+
 
 {
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      (import "${home-manager}/nixos")
     ];
-
-  home-manager.useUserPackages = true;
-  home-manager.useGlobalPkgs = true;
-  home-manager.backupFileExtension = "backup";
-  home-manager.users.lose = import ./home.nix;
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -60,8 +49,18 @@ in
   # You can disable this if you're only using the Wayland session.
   services.xserver.enable = true;
 
+  #sddm login page w/ wayland
+  services.displayManager.sddm = {
+    enable = true;
+
+    wayland = {
+      enable = true;
+      };
+    };
+
+
+
   # Enable the KDE Plasma Desktop Environment.
-  services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;
 
   # Configure keymap in X11
@@ -91,6 +90,15 @@ in
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
+
+  #services.getty.autologinUser = "lose";
+  #uncomment above line if you want auto login (for tty only)
+
+  programs.hyprland = {
+      enable = true;
+      xwayland.enable = true;
+      withUWSM = true;
+      };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users."lose" = {
@@ -130,6 +138,11 @@ in
     obs-studio
     flatpak
     discord
+    google-chrome
+    tree
+    kitty
+    waybar
+    hyprpaper
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
