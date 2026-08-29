@@ -11,6 +11,7 @@
       ./hardware-configuration.nix
     ];
 
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -110,6 +111,14 @@
     ];
   };
 
+  programs.steam = {
+  enable = true;
+  remotePlay.openFirewall = true; # Optional: open ports for Steam Remote Play
+  dedicatedServer.openFirewall = true; # Optional: open ports for dedicated servers
+  localNetworkGameTransfers.openFirewall = true; # Optional: peer-to-peer game transfers
+};
+
+
   # Install firefox.
   programs.firefox.enable = true;
 
@@ -125,9 +134,7 @@
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
     ghostty
-    vscode
-    foot
-    thunar
+    vscodium
     git
     tealdeer
     xclip
@@ -142,8 +149,12 @@
     google-chrome
     tree
     kitty
+    #below is for hyprland
     waybar
     hyprpaper
+    rofi
+    cliphist
+    hyprpolkitagent
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
