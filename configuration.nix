@@ -164,6 +164,7 @@
     kitty
     kdePackages.bluedevil
     thcrap-steam-proton-wrapper
+    unzip
     #below is for hyprland
     waybar
     hyprpaper
