@@ -69,6 +69,10 @@
     variant = "";
   };
 
+  #bluetooth
+  hardware.bluetooth.enable = true;
+  hardware.bluetooth.powerOnBoot = true;
+
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
