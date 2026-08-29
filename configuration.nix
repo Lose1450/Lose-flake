@@ -69,6 +69,12 @@
     variant = "";
   };
 
+  #graphics acceleration
+  hardware.graphics = {
+    enable = true;
+    enable32Bit = true;
+  };
+
   #bluetooth
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
