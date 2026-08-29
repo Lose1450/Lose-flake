@@ -11,7 +11,9 @@
       btw = "echo i use nixos btw"; #this is just for demo purposes
       nrs = "sudo nixos-rebuild switch";
       nrsf = "sudo nixos-rebuild switch --flake /etc/nixos#Remielle";
-      rebuild-nixos = "sudo nixos-rebuild switch --flake /etc/nixos#Remielle";
+      rebuild-nixos = "sudo nixos-rebuild switch --flake /etc/nixos#Remielle && sudo cp /etc/nixos/* ~/Remielle && cd ~/Remielle && git add . && git commit && git push lose master";
+      git-commit = " sudo cp /etc/nixos/* ~/Remielle && cd ~/Remielle && git add . && git commit && git push lose master";
+
       };
 
       initExtra = ''

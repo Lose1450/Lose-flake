@@ -149,6 +149,7 @@
     google-chrome
     tree
     kitty
+    kdePackages.bluedevil
     #below is for hyprland
     waybar
     hyprpaper
