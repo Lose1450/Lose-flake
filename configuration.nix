@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 
 {
@@ -95,6 +95,10 @@
     # If you want to use JACK applications, uncomment this
     #jack.enable = true;
 
+    #caelestia shell pkgs
+
+
+
     # use the example session manager (no others are packaged yet so this is enabled by default,
     # no need to redefine it in your config for now)
     #media-session.enable = true;
@@ -171,6 +175,7 @@
     rofi
     cliphist
     hyprpolkitagent
+    inputs.caelestia-shell.packages.x86_64-linux.with-cli
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
