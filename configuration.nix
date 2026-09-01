@@ -132,7 +132,7 @@
   remotePlay.openFirewall = true; # Optional: open ports for Steam Remote Play
   dedicatedServer.openFirewall = true; # Optional: open ports for dedicated servers
   localNetworkGameTransfers.openFirewall = true; # Optional: peer-to-peer game transfers
-  gamescopeSession.enable = true;
+  gamescopeSession.enable = false;
 };
 
 
