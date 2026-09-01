@@ -3,6 +3,12 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+
+  hyprmod = {
+    url = "github:BlueManCZ/hyprmod";
+    inputs.nixpkgs.follows = "nixpkgs-unstable";
+  };
 
     home-manager = {
         url = "github:nix-community/home-manager";
@@ -22,6 +28,7 @@
         modules = [
             ./configuration.nix
             inputs.home-manager.nixosModules.home-manager
+            { nixpkgs.overlays = [ inputs.hyprmod.overlays.default ]; }
             {
                 home-manager = {
                     useGlobalPkgs = true;
