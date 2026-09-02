@@ -23,11 +23,7 @@
   };
 
   outputs = inputs: {
-<<<<<<< HEAD
-    nixosConfigurations.Remielle = inputs.nixpkgs.lib.nixosSystem {
-=======
-    nixosConfigurations.nixos = inputs.nixpkgs.lib.nixosSystem { #change nixos to Remielle later
->>>>>>> 7e14592 (Ver-1.5.3(?) added vlc)
+    nixosConfigurations.Remielle = inputs.nixpkgs.lib.nixosSystem { #change nixos to Remielle later
         system = "x86_64-linux"; #understand that this line is redundant
         modules = [
             ./configuration.nix

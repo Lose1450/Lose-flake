@@ -159,11 +159,7 @@
     bat
     steam
     osu-lazer-bin
-<<<<<<< HEAD
-    modrinth-app
-=======
     #modrinth-app
->>>>>>> 7e14592 (Ver-1.5.3(?) added vlc)
     protonplus
     obs-studio
     flatpak
