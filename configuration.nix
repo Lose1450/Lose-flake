@@ -170,6 +170,7 @@
     kdePackages.bluedevil
     thcrap-steam-proton-wrapper
     unzip
+    imagemagick
     #below is for hyprland
     waybar
     hyprpaper
