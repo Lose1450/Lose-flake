@@ -178,7 +178,7 @@
     cliphist
     hyprpolkitagent
     inputs.caelestia-shell.packages.x86_64-linux.with-cli
-    rockbox-utility
+    rhythmbox
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
