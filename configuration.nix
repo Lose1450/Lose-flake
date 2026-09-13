@@ -178,8 +178,6 @@
     cliphist
     hyprpolkitagent
     inputs.caelestia-shell.packages.x86_64-linux.with-cli
-    rhythmbox
-    libgpod
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
