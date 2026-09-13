@@ -178,6 +178,7 @@
     cliphist
     hyprpolkitagent
     inputs.caelestia-shell.packages.x86_64-linux.with-cli
+    strawberry
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
