@@ -160,6 +160,7 @@
     steam
     osu-lazer-bin
     #modrinth-app
+    vlc
     protonplus
     obs-studio
     flatpak
