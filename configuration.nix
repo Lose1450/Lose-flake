@@ -29,6 +29,9 @@
   # Enable networking
   networking.networkmanager.enable = true;
 
+  boot.kernelModules = [ "nls_utf8" "hfsplus" ];
+  boot.supportedFilesystems = [ "hfsplus" "hfs" "vfat" ];
+
   # Set your time zone.
   time.timeZone = "America/Los_Angeles";
 
@@ -172,6 +175,13 @@
     thcrap-steam-proton-wrapper
     unzip
     imagemagick
+    (callPackage ./CSVMusic/default.nix { })
+    hfsprogs
+    libgpod
+    rhythmbox
+    kdePackages.kdeconnect-kde
+    yt-dlp
+    piper
     #below is for hyprland
     waybar
     hyprpaper
@@ -179,7 +189,15 @@
     cliphist
     hyprpolkitagent
     inputs.caelestia-shell.packages.x86_64-linux.with-cli
+    #for ipod readability
+    libimobiledevice
+    usbutils
   ];
+
+#also for ipod usability
+
+  # Enable the USB multiplexing daemon for Apple devices
+  services.usbmuxd.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
