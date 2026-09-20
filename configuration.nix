@@ -182,16 +182,7 @@
     kdePackages.kdeconnect-kde
     yt-dlp
     piper
-    #below is for hyprland
-    waybar
-    hyprpaper
-    rofi
-    cliphist
-    hyprpolkitagent
-    inputs.caelestia-shell.packages.x86_64-linux.with-cli
-    #for ipod readability
-    libimobiledevice
-    usbutils
+    libratbag
   ];
 
 #also for ipod usability
