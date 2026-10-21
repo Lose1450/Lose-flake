@@ -156,13 +156,13 @@
     wget
     ghostty
     vscodium
+    kitty
     git
     tealdeer
     xclip
     bat
     steam
     osu-lazer-bin
-    #modrinth-app
     vlc
     protonplus
     obs-studio
@@ -170,7 +170,6 @@
     discord
     google-chrome
     tree
-    kitty
     kdePackages.bluedevil
     thcrap-steam-proton-wrapper
     unzip
@@ -183,6 +182,11 @@
     yt-dlp
     piper
     libratbag
+    dolphin-emu
+    p7zip
+    wineWow64Packages.stable
+    winetricks
+    prismlauncher
   ];
 
 #also for ipod usability
